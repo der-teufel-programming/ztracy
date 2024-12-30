@@ -88,7 +88,6 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
     tests.linkLibrary(tracy);
-    b.installArtifact(tests);
 
     test_step.dependOn(&b.addRunArtifact(tests).step);
 }
